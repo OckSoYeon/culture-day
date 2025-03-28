@@ -1,0 +1,107 @@
+/* 기본 설정 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f6f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #1f2937;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* 카드 레이아웃 */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* 가로 정렬 도구 */
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
+/* 댓글 스타일 */
+.comment-box {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-box button {
+  margin-left: 6px;
+}
+
+/* 입력창과 댓글 간격 */
+.comment-input-box {
+  margin-top: 16px;
+}
+
+/* 반응형 스타일: 모바일용 */
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .comment-input-box .flex input,
+  .comment-input-box .flex button {
+    width: 100%;
+  }
+
+  .comment-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comment-box div {
+    margin-top: 6px;
+    align-self: flex-end;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
+}
