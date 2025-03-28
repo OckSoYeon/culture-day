@@ -156,17 +156,23 @@ export default function App() {
 
       {!selectedExhibition ? (
         <>
-          <h2>전시 등록</h2>
+          <h2>전시, 행사 등록</h2>
+          <p style={{ fontSize: "0.9rem", color: "#666", marginBottom: "8px" }}>
+          문화의 날에 가고 싶은 전시, 행사를 등록해보세요. 일정, 장소, 설명을 함께 입력할 수 있어요.
+          </p>
           <div className="flex" style={{ flexDirection: "column" }}>
             <input placeholder="전시 제목" value={newExhibition.title} onChange={(e) => setNewExhibition({ ...newExhibition, title: e.target.value })} />
             <input type="date" value={newExhibition.date} onChange={(e) => setNewExhibition({ ...newExhibition, date: e.target.value })} />
             <input placeholder="전시장소" value={newExhibition.location} onChange={(e) => setNewExhibition({ ...newExhibition, location: e.target.value })} />
             <textarea placeholder="설명" value={newExhibition.description} onChange={(e) => setNewExhibition({ ...newExhibition, description: e.target.value })} />
             <input placeholder="비밀번호 (삭제/수정용)" value={newExhibition.password} onChange={(e) => setNewExhibition({ ...newExhibition, password: e.target.value })} />
-            <button onClick={handleNewExhibitionSubmit}>전시 등록</button>
+            <button onClick={handleNewExhibitionSubmit}>전시, 행사 등록</button>
           </div>
 
-          <h2>전시 목록</h2>
+          <h2>전시,  행사 목록</h2>
+          <p style={{ fontSize: "0.9rem", color: "#666", marginBottom: "8px" }}>
+          여러분들이 등록해주신 전시, 행사입니다. 등록된 겻들 중 동행하고 싶은 전시, 행사를 클릭해 참여 댓글을 남길 수 있어요.
+          </p>
           {exhibitions.map((exhibition) => (
             <div key={exhibition.id} className="card">
               <div onClick={() => setSelectedExhibition(exhibition)} style={{ cursor: "pointer" }}>
@@ -182,7 +188,7 @@ export default function App() {
 
           {isEditingExhibition && (
             <div className="card">
-              <h3>전시 수정</h3>
+              <h3>전시, 행사 수정</h3>
               <input value={editingExhibitionData.title} onChange={(e) => setEditingExhibitionData({ ...editingExhibitionData, title: e.target.value })} />
               <input type="date" value={editingExhibitionData.date} onChange={(e) => setEditingExhibitionData({ ...editingExhibitionData, date: e.target.value })} />
               <input value={editingExhibitionData.location} onChange={(e) => setEditingExhibitionData({ ...editingExhibitionData, location: e.target.value })} />
